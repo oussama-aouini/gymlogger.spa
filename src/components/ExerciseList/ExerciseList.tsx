@@ -1,6 +1,7 @@
 import { ChangeEvent, useState, SyntheticEvent } from "react";
 import { ExerciseDto } from "../../gym";
 import { searchExercises } from "../../api";
+import Exercise from "../Exercise/Exercise";
 
 type Props = {};
 const ExerciseList = (props: Props) => {
@@ -21,13 +22,26 @@ const ExerciseList = (props: Props) => {
     } else if (Array.isArray(result.data)) {
       setExercises(result.data);
     }
-    console.log(exercises);
   };
 
   return (
     <div>
       <input value={search} onChange={(e) => handleChange(e)} />
       <button onClick={(e) => handleClick(e)}>Get Exercises</button>
+      {serverError && <h1>{serverError}</h1>}
+      {exercises.length > 1 ? (
+        <ul>
+          {exercises.map((exercise) => {
+            return (
+              <li key={exercise.id}>
+                <Exercise key={exercise.id} exerciseName={exercise.name} />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <h1>No exercises</h1>
+      )}
     </div>
   );
 };
