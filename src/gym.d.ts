@@ -11,7 +11,7 @@ export enum Muscle {
 }
 
 export interface ExerciseDto {
-  int: string;
+  id: string;
   name: string;
   Muscles: Muscle[];
 }
