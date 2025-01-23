@@ -1,9 +1,9 @@
-import ExerciseList from "./components/ExerciseList/ExerciseList";
+import ExerciseForm from "./components/ExerciseForm/ExerciseForm";
 
 const App = () => {
   return (
     <div>
-      <ExerciseList />
+      <ExerciseForm />
     </div>
   );
 };
