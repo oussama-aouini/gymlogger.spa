@@ -1,0 +1,3 @@
+# prettier also ignores what is in git ignore 
+build
+coverage
