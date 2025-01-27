@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from 'react';
 
 type Props = {};
 const ExerciseForm = (props: Props) => {
@@ -11,7 +11,10 @@ const ExerciseForm = (props: Props) => {
 
   return (
     <form onSubmit={handleAddExercise}>
-      <input value={exerciseName} onChange={e => setExerciseName(e.target.value)} />
+      <input
+        value={exerciseName}
+        onChange={(e) => setExerciseName(e.target.value)}
+      />
       <button type="submit">Add</button>
     </form>
   );

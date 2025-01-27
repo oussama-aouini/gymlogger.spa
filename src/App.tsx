@@ -1,4 +1,4 @@
-import ExerciseForm from "./components/ExerciseForm/ExerciseForm";
+import ExerciseForm from './components/ExerciseForm/ExerciseForm';
 
 const App = () => {
   return (

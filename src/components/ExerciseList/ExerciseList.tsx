@@ -1,14 +1,14 @@
-import { ChangeEvent, useState, SyntheticEvent } from "react";
-import { ExerciseDto } from "../../gym";
-import { searchExercises } from "../../api";
-import Exercise from "../Exercise/Exercise";
+import { ChangeEvent, useState, SyntheticEvent } from 'react';
+import { ExerciseDto } from '../../gym';
+import { searchExercises } from '../../api';
+import Exercise from '../Exercise/Exercise';
 
 type Props = {};
 const ExerciseList = (props: Props) => {
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>('');
   // allways inzilise state with a value or you will get undefined errors
   const [exercises, setExercises] = useState<ExerciseDto[]>([]);
-  const [serverError, setServerError] = useState<string>("");
+  const [serverError, setServerError] = useState<string>('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {};
 
@@ -17,7 +17,7 @@ const ExerciseList = (props: Props) => {
     const result = await searchExercises();
     // this is typenarrowing meaning doing different things depending on the return type
     // we do it when the server reponse can be of different types
-    if (typeof result === "string") {
+    if (typeof result === 'string') {
       setServerError(result);
     } else if (Array.isArray(result.data)) {
       setExercises(result.data);
