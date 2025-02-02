@@ -1,9 +1,9 @@
-import ExerciseForm from './components/ExerciseForm/ExerciseForm';
+import Router from "./Router";
 
 const App = () => {
   return (
     <div>
-      <ExerciseForm />
+      <Router />
     </div>
   );
 };
